@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './Header';
-import Toolbar from './Toolbar';
-import Table from './Table';
-import Pagination from './Pagination';
+import Header from '../presentationals/Header';
+import Toolbar from '../presentationals/Toolbar';
+import Table from '../presentationals/Table';
+import Pagination from '../presentationals/Pagination';
 
 var App = React.createClass({
 
