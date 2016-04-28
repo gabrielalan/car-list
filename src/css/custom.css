@@ -1,0 +1,113 @@
+body, html {
+	background-color: #F1F4F9;
+}
+
+.app-container {
+	width: 1024px;
+	margin: 0 auto;
+}
+
+.app-padder {
+	padding: 0px 42px;
+}
+
+.navbar-blue {
+	background-color: rgb(38, 135, 233);
+	border-radius: 0px;
+	border: none;
+}
+
+.navbar-blue .navbar-brand {
+	color: white;
+	margin-left: 25px;
+	font-size: 14px;
+}
+
+.btn {
+	border: none;
+	border-radius: 3px;
+}
+
+.btn-lg {
+	font-size: 12px;
+	padding: 12px 35px;
+}
+
+.input-group-lg input.form-control, .input-group-lg > .input-group-btn > .btn {
+	font-size: 12px;
+	height: 40px;
+	border-color: #c9d3dd;
+	border-radius: 3px 0px 0px 3px;
+}
+
+.input-group-lg > .input-group-btn > .btn {
+	font-size: 16px;
+	border-radius: 0px 3px 3px 0px;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+.btn-grey {
+	background-color: #F1F4F9;
+	border: 1px solid #c9d3dd;
+}
+
+.app-table {
+	margin-top: 20px;
+}
+
+.app-table table {
+	background-color: white;
+	font-size: 12px;
+}
+
+.app-table table tr > th {
+	background-color: #f8fafc;
+	border: none;
+	color: #3a5c7c;
+}
+
+.app-table table tr:hover {
+	background-color: #d8e9fb;
+}
+
+.app-table table tr td {
+	padding: 17px 8px;
+	border-right: none;
+	border-left: none;
+	color: #3a5c7c;
+	line-height: 14px;
+    font-size: 14px;
+}
+
+.app-table table tr td input[type="checkbox"] {
+	margin: 0px;
+}
+
+.app-pagination .pagination li a {
+	font-size: 14px;
+	color: #395b7b;
+	border-color: #c9d3dd;
+}
+
+.app-pagination .pagination li:first-child a {
+	border-radius: 3px 0px 0px 3px;
+}
+
+.app-pagination .pagination li:last-child a {
+	border-radius: 0px 3px 3px 0px;
+}
+
+.app-pagination .pagination li.active a {
+	background-color: #d8e9fb;
+	border-color: #8bc8f6;
+}
+
+.app-pagination .pagination li a:hover, .app-pagination .pagination li a:focus {
+	background-color: #fffaeb;
+}
+
+.app-pagination .pagination li.active a:hover, .app-pagination .pagination li.active a:focus {
+	background-color: #d8e9fb;
+	color: #395b7b;
+}
