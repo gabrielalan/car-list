@@ -1,6 +1,40 @@
 import React from 'react';
+import Checkbox from './Checkbox';
+import numeral from 'numeral';
+import numeralPtBr from 'numeral/languages/pt-br';
+
+numeral.language('pt-br', numeralPtBr);
+numeral.language('pt-br');
 
 var Table = React.createClass({
+
+	onChange(checked, value) {
+		const onSelect = this.props.onSelect;
+
+		if (onSelect)
+			onSelect(checked, value);
+	},
+
+	renderImage(url) {
+		if (!url)
+			return <span>Sem foto</span>;
+
+		return (<a href={url} className="app-image-link" target="_blank">Imagem</a>);
+	},
+
+	renderLines() {
+		return this.props.list.map(current => {
+			return (<tr key={current.placa}>
+				<td><Checkbox onChange={this.onChange} checked={current.selected} value={current.placa} /></td>
+				<td>{current.placa}</td>
+				<td>{current.modelo}</td>
+				<td>{current.marca}</td>
+				<td>{this.renderImage(current.imagem)}</td>
+				<td>{current.combustivel}</td>
+				<td>{numeral(current.valor).format('0,0.00')}</td>
+			</tr>)
+		});
+	},
 
 	render() {
 		return (<div className="row app-table">
@@ -9,7 +43,7 @@ var Table = React.createClass({
 					<table className="table table-hover table-bordered">
 						<thead>
 							<tr>
-								<th><input type="checkbox" /></th>
+								<th><Checkbox onChange={this.onChange} checked={this.props.allSelected} value="ALL" /></th>
 								<th>Placa</th>
 								<th>Modelo</th>
 								<th>Marca</th>
@@ -19,51 +53,7 @@ var Table = React.createClass({
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td>AAA1000</td>
-								<td>Gol</td>
-								<td>Wolksvagem</td>
-								<td>Sem foto</td>
-								<td>Gasolina</td>
-								<td>20.000,00</td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td>AAA1000</td>
-								<td>Gol</td>
-								<td>Wolksvagem</td>
-								<td>Sem foto</td>
-								<td>Gasolina</td>
-								<td>20.000,00</td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td>AAA1000</td>
-								<td>Gol</td>
-								<td>Wolksvagem</td>
-								<td>Sem foto</td>
-								<td>Gasolina</td>
-								<td>20.000,00</td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td>AAA1000</td>
-								<td>Gol</td>
-								<td>Wolksvagem</td>
-								<td>Sem foto</td>
-								<td>Gasolina</td>
-								<td>20.000,00</td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td>AAA1000</td>
-								<td>Gol</td>
-								<td>Wolksvagem</td>
-								<td>Sem foto</td>
-								<td>Gasolina</td>
-								<td>20.000,00</td>
-							</tr>
+							{this.renderLines()}
 						</tbody>
 					</table>
 				</div>

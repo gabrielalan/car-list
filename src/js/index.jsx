@@ -3,7 +3,12 @@ require('../css/custom.css');
 require('../css/fontello.css');
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import store from './state/store';
 import App from './components/containers/App';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+const change = () => render(<App data={store.getState()} />, document.getElementById('app'));
+
+store.subscribe(change);
+
+change();
