@@ -18,14 +18,16 @@ var Header = React.createClass({
 	render() {
 		const editDisabled = this.props.editDisabled;
 		const removeDisabled = this.props.removeDisabled;
+		const editHandler = editDisabled ? () => null : this.handler(this.props.onEdit);
+		const removeHandler = removeDisabled ? () => null : this.handler(this.props.onRemove);
 
 		return (<div className="row app-toolbar">
 			<div className="col-xs-8 col-ls-8 col-lg-8 col-md-8">
 				<button className="btn btn-success btn-lg" onClick={this.handler(this.props.onAdd)}>Novo Carro</button>
 				{" "}
-				<button className={"btn btn-info btn-lg" + (editDisabled ? " disabled" : "")} disabled={editDisabled} onClick={this.handler(this.props.onEdit)}>Editar</button>
+				<button className={"btn btn-info btn-lg" + (editDisabled ? " disabled" : "")} disabled={editDisabled} onClick={editHandler}>Editar</button>
 				{" "}
-				<button className={"btn btn-danger btn-lg" + (removeDisabled ? " disabled" : "")} disabled={removeDisabled} onClick={this.handler(this.props.onRemove)}>Remover</button>
+				<button className={"btn btn-danger btn-lg" + (removeDisabled ? " disabled" : "")} disabled={removeDisabled} onClick={removeHandler}>Remover</button>
 			</div>
 			<div className="col-xs-4 col-ls-4 col-lg-4 col-md-4">
 				<form action="#" onSubmit={this.handler(this.props.onSearch)}>

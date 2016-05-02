@@ -23,7 +23,9 @@ var Table = React.createClass({
 	},
 
 	renderLines() {
-		return this.props.list.map(current => {
+		let list = this.props.list || [];
+
+		return list.map(current => {
 			return (<tr key={current.placa}>
 				<td><Checkbox onChange={this.onChange} checked={current.selected} value={current.placa} /></td>
 				<td>{current.placa}</td>

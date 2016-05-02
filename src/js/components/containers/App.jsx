@@ -1,21 +1,19 @@
 import React from 'react';
 import Header from '../presentationals/Header';
 import Interaction from './Interaction';
-import Grid from './Grid';
-import Pagination from '../presentationals/Pagination';
+import GridPager from './GridPager';
 
 var App = React.createClass({
 
 	render() {
-		const cars = this.props.data.cars;
+		const data = this.props.data;
 
 		return (<div className="app-container">
 			<Header />
 
 			<div className="app-padder">
-				<Interaction cars={cars} />
-				<Grid cars={cars} search={this.props.data.search} />
-				<Pagination />
+				<Interaction {...data} />
+				<GridPager {...data} />
 			</div>
 		</div>);
 	}

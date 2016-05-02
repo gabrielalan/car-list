@@ -8,7 +8,9 @@ module.exports = {
     output: {
         filename: 'app.js',
         path: path.join(__dirname, 'dist'),
-        publicPath: 'dist/'
+        publicPath: 'dist/',
+        libraryTarget: "var",
+        library: "Libs"
     },
     module: {
         loaders: [
@@ -30,6 +32,9 @@ module.exports = {
     },
     resolve: {
         extensions: ['', '.js', '.jsx']
+    },
+    externals: {
+        "jquery": "jQuery"
     },
     devtool: 'cheap-module-source-map',
     plugins: [

@@ -113,6 +113,10 @@ body, html {
 	color: #395b7b;
 }
 
+.app-pagination .pagination li.disabled a {
+	color: #ccc;
+}
+
 .app-checkbox input {
 	opacity: 0;
 	position: absolute;

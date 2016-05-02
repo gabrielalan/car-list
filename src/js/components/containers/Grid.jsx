@@ -23,6 +23,9 @@ var Grid = React.createClass({
 	},
 
 	getAllSelected(cars) {
+		if( !cars || !cars.length )
+			return false;
+
 		return cars.map(current => current.selected).reduce((a, b) => a && b);
 	},
 

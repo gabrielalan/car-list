@@ -1,7 +1,14 @@
-export const addCar = (data) => {
+export const saveCar = (data) => {
 	return {
-		type: 'ADD_CAR',
+		type: 'SAVE_CAR',
 		data
+	}
+};
+
+export const removeCar = (placas) => {
+	return {
+		type: 'REMOVE_CAR',
+		placas
 	}
 };
 
@@ -17,5 +24,12 @@ export const setSearch = (search) => {
 	return {
 		type: 'SEARCH',
 		search
+	}
+};
+
+export const setPage = (page) => {
+	return {
+		type: 'PAGE',
+		page
 	}
 };
